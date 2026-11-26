@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light">
+<title>Natal Família Rodrigues 🎄🎅</title>
+<link rel="stylesheet" href="style.css"><script src="config.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<header class="hero"><div class="wrap"><div class="brand"><span class="brand-icon" aria-hidden="true">✦</span> AMIGO OCULTO <span class="brand-line"></span> NATAL</div><h1>Natal Família Rodrigues 🎄🎅</h1><p>Cadastre o presente para o amigo oculto da Família Rodrigues.</p></div></header>
+<main class="wrap">
+<div id="demo-banner" class="notice" hidden>Modo demonstração: dados fictícios ficam somente neste navegador. Não utilize informações reais até configurar o Supabase.</div>
+<nav class="tabs" aria-label="Menu"><button class="tab active" data-view="register" aria-current="page">Cadastrar desejos</button><button class="tab" data-view="browse">Consultar presentes</button><button class="tab" data-view="admin">Administração</button></nav>
+<div id="feedback" role="status" aria-live="polite" hidden></div>
+<section id="register" class="panel">
+<div class="section-head"><div><span class="eyebrow">01 / SUAS PREFERÊNCIAS</span><h2>O que você gostaria de ganhar?</h2><p>Preencha seus dados e até três sugestões de presentes.</p></div><button class="secondary small" id="edit-toggle" type="button">Editar meu cadastro</button></div>
+<form id="gift-form">
+<div id="edit-box" class="inset" hidden><label>Código individual de edição<input id="edit-code" autocomplete="off" placeholder="Código recebido no cadastro"></label><button class="secondary" type="button" id="load-edit">Carregar meu cadastro</button><p class="hint">Presentes já reservados não podem ser alterados.</p></div>
+<div class="fields"><label>Nome completo <span>*</span><input id="name" required maxlength="100" autocomplete="name" placeholder="Seu nome"></label></div>
+<h3>Tamanhos <span class="optional">Opcional</span></h3>
+<div class="fields three"><label>Camisa<input id="shirt" maxlength="30" placeholder="Ex.: G"></label><label>Calça<input id="pants" maxlength="30" placeholder="Ex.: 42"></label><label>Calçado<input id="shoe" maxlength="30" placeholder="Ex.: 40"></label></div>
+<h3>Minha lista de desejos <span class="optional">Ao menos 1</span></h3>
+<div id="gift-fields"></div>
+<label>Observações<textarea id="notes" maxlength="500" rows="3" placeholder="Cores favoritas, preferências ou outros detalhes..."></textarea></label>
+<p class="hint">Seu nome, tamanhos e sugestões poderão ser consultados por qualquer pessoa que acesse o site e pesquise seu nome. Não inclua dados sensíveis.</p>
+<button class="primary" id="save-button" type="submit">Cadastrar minhas sugestões <span aria-hidden="true">→</span></button>
+</form>
+<div id="receipt" class="receipt" hidden><h3>Cadastro salvo!</h3><p>Guarde seu código individual de edição. Ele permite alterar apenas o seu cadastro.</p><code id="receipt-code"></code><button id="copy-code" class="secondary" type="button">Copiar código</button></div>
+</section>
+<section id="browse" class="panel" hidden>
+<div class="section-head"><div><span class="eyebrow">02 / LISTAS DA FAMÍLIA</span><h2>Encontre o presente certo</h2><p>Digite o nome da pessoa que você tirou no amigo oculto para consultar suas sugestões.</p></div></div>
+<form id="browse-form" class="inline-form"><label>Nome do participante<input id="browse-search" type="search" required minlength="3" maxlength="100" placeholder="Ex.: Maria Rodrigues"></label><button class="primary" type="submit">Buscar presentes</button></form>
+<div id="browse-results" hidden><div id="family-list" class="people"></div></div>
+</section>
+<section id="admin" class="panel" hidden>
+<div class="section-head"><div><span class="eyebrow">03 / ORGANIZAÇÃO</span><h2>Painel administrativo</h2><p>Acompanhe os cadastros, reservas e exporte os dados.</p></div></div>
+<form id="admin-form"><p class="hint">Acesso restrito à administração. Informe a senha para continuar.</p><label>Senha de administração<input id="admin-password" type="password" required autocomplete="current-password" placeholder="Digite a senha"></label><button class="primary" type="submit">Entrar</button></form>
+<div id="admin-results" hidden><div class="stats"><div><span>Participantes</span><strong id="stat-people">0</strong></div><div><span>Sugestões</span><strong id="stat-gifts">0</strong></div><div><span>Reservados</span><strong id="stat-reserved">0</strong></div></div><div class="toolbar"><button id="refresh-admin" class="secondary">Atualizar</button><button id="export" class="secondary">Exportar CSV</button><button id="logout" class="secondary">Sair</button></div><div id="admin-list" class="people"></div></div>
+</section>
+</main>
+<dialog id="reserve-dialog"><form id="reserve-form"><h2>Reservar presente</h2><p id="reserve-description"></p><label>Seu nome<input id="reserver" required maxlength="100" autocomplete="name"></label><p class="hint">A família verá apenas que o item está reservado. O administrador poderá consultar seu nome.</p><div class="toolbar"><button class="secondary" id="cancel-reserve" type="button">Cancelar</button><button class="primary" type="submit">Confirmar reserva</button></div></form></dialog>
+<footer class="wrap">Natal Família Rodrigues · Amigo oculto 🎄</footer>
+</body></html>
